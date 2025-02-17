@@ -2,25 +2,27 @@ const express = require("express");
 const cors = require("cors");
 require('dotenv').config()
 
-const url = "https://ping.telex.im/v1/webhooks/019515f4-7192-7f4c-8cf6-6e3c019e67fa";
-const data = {
-  "event_name": "string",
-  "message": "javascript post",
-  "status": "success",
-  "username": "collins"
-};
-
-fetch(url, {
-  method: "POST",
-  headers: {
-    "Accept": "application/json",
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(data)
-})
-.then(response => response.json())
-.then(console.log)
-.catch(console.error);
+function notifyTelexChannel(){
+  const url = "https://ping.telex.im/v1/webhooks/019515f4-7192-7f4c-8cf6-6e3c019e67fa";
+  const data = {
+    "event_name": "Ping to RemindME",
+    "message": "PING from Telex to RemindME successfully",
+    "status": "success",
+    "username": "RemindME"
+  };
+  
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(console.log)
+  .catch(console.error);
+}
 
 const app = express();
 
@@ -75,6 +77,7 @@ app.get('/date', (req,res)=>{
 })
 
 app.get("/drink-water", (req, res) => {
+  notifyTelexChannel()
   
   const message = getHydrationMessage()
   if (sendReminder === false) {
