@@ -1,0 +1,37 @@
+{
+  "data": {
+    "date": {
+      "created_at": "2025-02-17",
+      "updated_at": "2025-02-17"
+    },
+    "descriptions": {
+      "app_name": "RemindME",
+      "app_description": "An integration that uses intervals to remind users to drink water",
+      "app_logo": "https://ec2-107-23-99-121.compute-1.amazonaws.com/",
+      "app_url": "https://ec2-107-23-99-121.compute-1.amazonaws.com/",
+      "background_color": "#fff"
+    },
+    "is_active": true,
+    "integration_type": "interval",
+    "key_features": [
+      "Email notifications"
+    ],
+    "author": "Basi",
+    "settings": [
+      {
+        "label": "user email",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "label": "message",
+        "type": "text",
+        "required": true,
+        "default": "basic"
+      }
+    ],
+    "target_url": "https://ec2-107-23-99-121.compute-1.amazonaws.com/drink-water",
+    "tick_url": "https://ec2-107-23-99-121.compute-1.amazonaws.com/drink-water"
+  }
+}
