@@ -113,6 +113,14 @@ app.get('/', (req,res)=>{
   })
 })
 
+app.get('/date', (req, res) => {
+  const date = new Date()
+  const time = date.toLocaleTimeString()
+  res.json({
+    "date": time
+  })
+})
+
 app.get("/drink-water", (req, res) => {
   notifyTelexChannel()
   
