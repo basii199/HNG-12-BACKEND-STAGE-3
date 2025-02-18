@@ -75,40 +75,76 @@ app.use(cors());
 app.get('/', (req,res)=>{
   res.json({
     "data": {
-      "date": {
-        "created_at": "2025-02-17",
-        "updated_at": "2025-02-17"
-      },
-      "descriptions": {
-        "app_name": "RemindME",
-        "app_description": "An integration that uses intervals to remind users to drink water",
-        "app_logo": "http://107.23.99.121/",
-        "app_url": "http://107.23.99.121/",
-        "background_color": "#fff"
-      },
-      "is_active": true,
-      "integration_type": "interval",
-      "integration_category": "Email & Messaging",
-      "key_features": [
-        "Email notifications"
-      ],
-      "author": "Basi",
-      "settings": [
-        {
-          "label": "user email",
-          "type": "text",
-          "required": true,
-          "default": ""
+        "date": {
+            "created_at": "2025-02-17",
+            "updated_at": "2025-02-17"
         },
-        {
-          "label": "message",
-          "type": "text",
-          "required": true,
-          "default": "basic"
-        }
-      ],
-      "target_url": "http://107.23.99.121/drink-water",
-      "tick_url": "http://107.23.99.121/drink-water"
+        "descriptions": {
+            "app_name": "RemindME",
+            "app_description": "An integration that uses intervals to remind users to drink water",
+            "app_logo": "http://107.23.99.121/",
+            "app_url": "http://107.23.99.121/",
+            "background_color": "#FFFFFF"
+        },
+        "is_active": true,
+        "integration_type": "interval",
+        "integration_category": "Email & Messaging",
+        "key_features": [
+            "Email notifications",
+            "Customizable reminder intervals",
+            "Simple and lightweight setup"
+        ],
+        "permissions": {
+            "monitoring_user": {
+                "always_online": true,
+                "display_name": "RemindME"
+            }
+        },
+        "output": [
+            {
+                "label": "Water_Reminder",
+                "value": true
+            },
+            {
+                "label": "Hydration_Tracker",
+                "value": false
+            }
+        ],
+        "settings": [
+            {
+                "label": "User Email",
+                "type": "text",
+                "required": true,
+                "default": ""
+            },
+            {
+                "label": "Message",
+                "type": "text",
+                "required": true,
+                "default": "Remember to drink water!"
+            },
+            {
+                "label": "Reminder Interval",
+                "type": "text",
+                "required": true,
+                "default": "* * * * *"
+            },
+            {
+                "label": "Do you want to continue?",
+                "type": "checkbox",
+                "required": true,
+                "default": "Yes"
+            },
+            {
+                "label": "Alert Admin",
+                "type": "multi-checkbox",
+                "required": true,
+                "default": "Super-Admin",
+                "options": ["Super-Admin", "Admin", "Manager", "Developer"]
+            }
+        ],
+        "target_url": "http://107.23.99.121/drink-water",
+        "tick_url": "http://107.23.99.121/drink-water"
     }
   })
 })
