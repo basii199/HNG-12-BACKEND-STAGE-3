@@ -82,8 +82,8 @@ app.get('/', (req,res)=>{
       "descriptions": {
         "app_name": "RemindME",
         "app_description": "An integration that uses intervals to remind users to drink water",
-        "app_logo": "https://ec2-107-23-99-121.compute-1.amazonaws.com/",
-        "app_url": "https://ec2-107-23-99-121.compute-1.amazonaws.com/",
+        "app_logo": "http://107.23.99.121/",
+        "app_url": "http://107.23.99.121/",
         "background_color": "#fff"
       },
       "is_active": true,
@@ -107,8 +107,8 @@ app.get('/', (req,res)=>{
           "default": "basic"
         }
       ],
-      "target_url": "https://ec2-107-23-99-121.compute-1.amazonaws.com/drink-water",
-      "tick_url": "https://ec2-107-23-99-121.compute-1.amazonaws.com/drink-water"
+      "target_url": "http://107.23.99.121/drink-water",
+      "tick_url": "http://107.23.99.121/drink-water"
     }
   })
 })
