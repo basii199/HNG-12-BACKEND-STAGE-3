@@ -88,6 +88,7 @@ app.get('/', (req,res)=>{
       },
       "is_active": true,
       "integration_type": "interval",
+      "integration_category": "Email & Messaging",
       "key_features": [
         "Email notifications"
       ],
