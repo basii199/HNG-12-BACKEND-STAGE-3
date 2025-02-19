@@ -72,7 +72,11 @@ function getHydrationMessage() {
 
 app.use(cors());
 
-app.get('/', (req,res)=>{
+app.get('/', (req, res) => {
+  res.send('Home page')
+})
+
+app.get('/config', (req,res)=>{
   res.json({
     "data": {
         "date": {
@@ -82,8 +86,8 @@ app.get('/', (req,res)=>{
         "descriptions": {
             "app_name": "RemindME",
             "app_description": "An integration that uses intervals to remind users to drink water",
-            "app_logo": "http://107.23.99.121/",
-            "app_url": "http://107.23.99.121/",
+            "app_logo": "https://res.cloudinary.com/dj5wh1pcv/image/upload/v1739879962/tggod5mvodlse0tonf4f.svg",
+            "app_url": "https://be-stage-3.vercel.app/",
             "background_color": "#FFFFFF"
         },
         "is_active": true,
@@ -102,13 +106,9 @@ app.get('/', (req,res)=>{
         },
         "output": [
             {
-                "label": "Water_Reminder",
+                "label": "drinkwater-notifications",
                 "value": true
             },
-            {
-                "label": "Hydration_Tracker",
-                "value": false
-            }
         ],
         "settings": [
             {
@@ -118,42 +118,23 @@ app.get('/', (req,res)=>{
                 "default": ""
             },
             {
-                "label": "Message",
-                "type": "text",
-                "required": true,
-                "default": "Remember to drink water!"
-            },
-            {
                 "label": "Reminder Interval",
                 "type": "text",
                 "required": true,
-                "default": "* * * * *"
+                "default": "0 * * * *"
             },
-            {
-                "label": "Do you want to continue?",
-                "type": "checkbox",
-                "required": true,
-                "default": "Yes"
-            },
-            {
-                "label": "Alert Admin",
-                "type": "multi-checkbox",
-                "required": true,
-                "default": "Super-Admin",
-                "options": ["Super-Admin", "Admin", "Manager", "Developer"]
-            }
         ],
-        "target_url": "http://107.23.99.121/drink-water",
-        "tick_url": "http://107.23.99.121/drink-water"
+        "target_url": "https://be-stage-3.vercel.app/date",
+        "tick_url": "https://be-stage-3.vercel.app/drink-water"
     }
   })
 })
 
-app.get('/date', (req, res) => {
+app.get('/time', (req, res) => {
   const date = new Date()
   const time = date.toLocaleTimeString()
   res.json({
-    "date": time
+    "time": time
   })
 })
 
@@ -228,3 +209,5 @@ app.get("/drink-water", (req, res) => {
 app.listen(8000, () => {
   console.log(`Server running on port 8000`);
 });
+
+module.exports = app
