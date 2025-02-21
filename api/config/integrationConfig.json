@@ -1,0 +1,51 @@
+{
+  "data": {
+    "date": {
+      "created_at": "2025-02-17",
+      "updated_at": "2025-02-17"
+    },
+    "descriptions": {
+      "app_name": "RemindME",
+      "app_description": "An integration that uses intervals to remind users to drink water",
+      "app_logo": "https://res.cloudinary.com/dj5wh1pcv/image/upload/v1739879962/tggod5mvodlse0tonf4f.svg",
+      "app_url": "https://be-stage-3.vercel.app/",
+      "background_color": "#FFFFFF"
+    },
+    "is_active": true,
+    "integration_type": "interval",
+    "integration_category": "Email & Messaging",
+    "key_features": [
+      "Email notifications",
+      "Customizable reminder intervals",
+      "Simple and lightweight setup"
+    ],
+    "permissions": {
+      "monitoring_user": {
+        "always_online": true,
+        "display_name": "RemindME"
+      }
+    },
+    "output": [
+      {
+        "label": "drinkwater-notifications",
+        "value": true
+      }
+    ],
+    "settings": [
+      {
+        "label": "User Email",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "label": "interval",
+        "type": "text",
+        "required": true,
+        "default": "0 * * * *"
+      }
+    ],
+    "target_url": "https://be-stage-3.vercel.app/time",
+    "tick_url": "https://be-stage-3.vercel.app/drink-water"
+  }
+}
